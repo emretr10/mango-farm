@@ -1,6 +1,6 @@
 import React from 'react'
 import BigNumber from 'bignumber.js'
-import { CalculateIcon, IconButton, useModal } from '@lemonfarm/uikit'
+import { CalculateIcon, IconButton, useModal } from '@mangofarm/uikit'
 import { Address } from 'config/constants/types'
 import ApyCalculatorModal from './ApyCalculatorModal'
 

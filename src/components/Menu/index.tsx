@@ -4,7 +4,7 @@ import { allLanguages } from 'config/localisation/languageCodes'
 import { LanguageContext } from 'contexts/Localisation/languageContext'
 import useTheme from 'hooks/useTheme'
 import { usePriceLemonBusd } from 'state/hooks'
-import { Menu as UikitMenu } from '@lemonfarm/uikit'
+import { Menu as UikitMenu } from '@mangofarm/uikit'
 import config from './config'
 
 const Menu = (props) => {

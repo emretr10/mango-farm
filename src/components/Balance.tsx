@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import CountUp from 'react-countup'
 import styled from 'styled-components'
-import { Text } from '@lemonfarm/uikit'
+import { Text } from '@mangofarm/uikit'
 
 interface TextProps {
   isDisabled?: boolean

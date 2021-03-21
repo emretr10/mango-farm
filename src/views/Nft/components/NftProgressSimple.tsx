@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Card, CardBody, Text } from '@lemonfarm/uikit'
+import { Card, CardBody, Text } from '@mangofarm/uikit'
 import useI18n from 'hooks/useI18n'
 import { NftProviderContext } from '../contexts/NftProvider'
 import InfoRow from './InfoRow'
