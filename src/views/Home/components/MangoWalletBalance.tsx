@@ -1,13 +1,13 @@
 import React from 'react'
-import { Text } from '@mangofarm/uikit'
+import { Text } from '@lemonfarm/uikit'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import useTokenBalance from 'hooks/useTokenBalance'
 import useI18n from 'hooks/useI18n'
-import { getMangoAddress } from 'utils/addressHelpers'
+import { getLemonAddress } from 'utils/addressHelpers'
 import { getBalanceNumber } from 'utils/formatBalance'
 import CardValue from './CardValue'
 
-const MangoWalletBalance = ({ mangoBalance }) => {
+const LemonWalletBalance = ({ lemonBalance }) => {
   const TranslateString = useI18n()
   const { account } = useWallet()
 
@@ -19,7 +19,7 @@ const MangoWalletBalance = ({ mangoBalance }) => {
     )
   }
 
-  return <CardValue value={mangoBalance} fontSize="24px" />
+  return <CardValue value={lemonBalance} fontSize="24px" />
 }
 
-export default MangoWalletBalance
+export default LemonWalletBalance

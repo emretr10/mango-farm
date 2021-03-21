@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react'
 import styled from 'styled-components'
-import { Heading, Card, CardBody, Button, useModal } from '@mangofarm/uikit'
-import { getMangoAddress } from 'utils/addressHelpers'
+import { Heading, Card, CardBody, Button, useModal } from '@lemonfarm/uikit'
+import { getLemonAddress } from 'utils/addressHelpers'
 import { getBalanceNumber } from 'utils/formatBalance'
 import useI18n from 'hooks/useI18n'
 import useGetLotteryHasDrawn from 'hooks/useGetLotteryHasDrawn'
@@ -9,7 +9,7 @@ import useTokenBalance from 'hooks/useTokenBalance'
 import { useMultiClaimLottery } from 'hooks/useBuyLottery'
 import { useTotalClaim } from 'hooks/useTickets'
 import BuyModal from 'views/Lottery/components/TicketCard/BuyTicketModal'
-import MangoWinnings from './MangoWinnings'
+import LemonWinnings from './LemonWinnings'
 import LotteryJackpot from './LotteryJackpot'
 
 const StyledLotteryCard = styled(Card)`
@@ -46,7 +46,7 @@ const FarmedStakingCard = () => {
   const TranslateString = useI18n()
   const { claimAmount } = useTotalClaim()
   const { onMultiClaim } = useMultiClaimLottery()
-  const mangoBalance = useTokenBalance(getMangoAddress())
+  const lemonBalance = useTokenBalance(getLemonAddress())
 
   const handleClaim = useCallback(async () => {
     try {
@@ -61,7 +61,7 @@ const FarmedStakingCard = () => {
     }
   }, [onMultiClaim, setRequestedClaim])
 
-  const [onPresentBuy] = useModal(<BuyModal max={mangoBalance} tokenName="MANGO" />)
+  const [onPresentBuy] = useModal(<BuyModal max={lemonBalance} tokenName="LEMON" />)
 
   return (
     <StyledLotteryCard>
@@ -69,10 +69,10 @@ const FarmedStakingCard = () => {
         <Heading size="xl" mb="24px">
           {TranslateString(550, 'Your Lottery Winnings')}
         </Heading>
-        <CardImage src="/images/ticket.svg" alt="mango logo" width={64} height={64} />
+        <CardImage src="/images/ticket.svg" alt="lemon logo" width={64} height={64} />
         <Block>
-          <MangoWinnings />
-          <Label>{TranslateString(552, 'MANGO to Collect')}</Label>
+          <LemonWinnings />
+          <Label>{TranslateString(552, 'LEMON to Collect')}</Label>
         </Block>
         <Block>
           <LotteryJackpot />

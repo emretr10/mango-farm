@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Modal } from '@mangofarm/uikit'
+import { Button, Modal } from '@lemonfarm/uikit'
 import ModalActions from 'components/ModalActions'
 import styled from 'styled-components'
 import useI18n from 'hooks/useI18n'
@@ -12,7 +12,7 @@ const WarningModal: React.FC<{ onDismiss?: () => void }> = ({ onDismiss }) => {
       <TicketsList>
         {TranslateString(468, 'Lottery ticket purchases are final.')}
         <br />
-        {TranslateString(470, 'Your MANGO will not be returned to you after you spend it to buy tickets.')}
+        {TranslateString(470, 'Your LEMON will not be returned to you after you spend it to buy tickets.')}
         <br />
         {TranslateString(472, 'Tickets are only valid for one lottery draw, and will be burnedafter the draw.')}
         <br />

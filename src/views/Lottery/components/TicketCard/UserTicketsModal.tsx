@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react'
-import { Button, Modal } from '@mangofarm/uikit'
+import { Button, Modal } from '@lemonfarm/uikit'
 import styled from 'styled-components'
 import { useWinningNumbers } from 'hooks/useTickets'
 import useI18n from 'hooks/useI18n'

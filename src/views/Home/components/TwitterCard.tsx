@@ -1,12 +1,12 @@
 import React from 'react'
-import { Card, CardBody, Heading, Text } from '@mangofarm/uikit'
+import { Card, CardBody, Heading, Text } from '@lemonfarm/uikit'
 import BigNumber from 'bignumber.js/bignumber'
 import styled from 'styled-components'
 import { Timeline } from 'react-twitter-widgets'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { useTotalSupply, useBurnedBalance } from 'hooks/useTokenBalance'
 import useI18n from 'hooks/useI18n'
-import { getMangoAddress } from 'utils/addressHelpers'
+import { getLemonAddress } from 'utils/addressHelpers'
 import CardValue from './CardValue'
 import { useFarms } from '../../../state/hooks'
 
@@ -35,7 +35,7 @@ const TwitterCard = () => {
         <Timeline
           dataSource={{
             sourceType: 'profile',
-            screenName: 'mangofinancebsc',
+            screenName: 'lemonfinancebsc',
           }}
           options={{
             height: '300',

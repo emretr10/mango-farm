@@ -117,7 +117,7 @@
       { "internalType": "contract IBEP20", "name": "lpToken", "type": "address" },
       { "internalType": "uint256", "name": "allocPoint", "type": "uint256" },
       { "internalType": "uint256", "name": "lastRewardBlock", "type": "uint256" },
-      { "internalType": "uint256", "name": "accMangoPerShare", "type": "uint256" }
+      { "internalType": "uint256", "name": "accLemonPerShare", "type": "uint256" }
     ],
     "stateMutability": "view",
     "type": "function"

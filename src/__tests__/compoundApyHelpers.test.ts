@@ -1,14 +1,14 @@
-import { calculateMangoEarnedPerThousandDollars, apyModalRoi } from '../utils/compoundApyHelpers'
+import { calculateLemonEarnedPerThousandDollars, apyModalRoi } from '../utils/compoundApyHelpers'
 
 it.each([
-  [{ numberOfDays: 1, farmApy: 365, mangoPrice: 1 }, 10],
-  [{ numberOfDays: 7, farmApy: 20, mangoPrice: 0.8 }, 4.8],
-  [{ numberOfDays: 40, farmApy: 212.21, mangoPrice: 1.2 }, 217.48],
-  [{ numberOfDays: 330, farmApy: 45.12, mangoPrice: 5 }, 100.67],
-  [{ numberOfDays: 365, farmApy: 100, mangoPrice: 0.2 }, 8572.84],
-  [{ numberOfDays: 365, farmApy: 20, mangoPrice: 1 }, 221.34],
-])('calculate mango earned with values %o', ({ numberOfDays, farmApy, mangoPrice }, expected) => {
-  expect(calculateMangoEarnedPerThousandDollars({ numberOfDays, farmApy, mangoPrice })).toEqual(expected)
+  [{ numberOfDays: 1, farmApy: 365, lemonPrice: 1 }, 10],
+  [{ numberOfDays: 7, farmApy: 20, lemonPrice: 0.8 }, 4.8],
+  [{ numberOfDays: 40, farmApy: 212.21, lemonPrice: 1.2 }, 217.48],
+  [{ numberOfDays: 330, farmApy: 45.12, lemonPrice: 5 }, 100.67],
+  [{ numberOfDays: 365, farmApy: 100, lemonPrice: 0.2 }, 8572.84],
+  [{ numberOfDays: 365, farmApy: 20, lemonPrice: 1 }, 221.34],
+])('calculate lemon earned with values %o', ({ numberOfDays, farmApy, lemonPrice }, expected) => {
+  expect(calculateLemonEarnedPerThousandDollars({ numberOfDays, farmApy, lemonPrice })).toEqual(expected)
 })
 
 it.each([

@@ -1,6 +1,6 @@
 import poolsConfig from 'config/constants/pools'
-import mangoChefABI from 'config/abi/mangoChef.json'
-import mangoABI from 'config/abi/mango.json'
+import lemonChefABI from 'config/abi/lemonChef.json'
+import lemonABI from 'config/abi/lemon.json'
 import wbnbABI from 'config/abi/weth.json'
 import { QuoteToken } from 'config/constants/types'
 import multicall from 'utils/multicall'
@@ -24,14 +24,14 @@ export const fetchPoolsBlockLimits = async () => {
     }
   })
 
-  const starts = await multicall(mangoChefABI, callsStartBlock)
-  const ends = await multicall(mangoChefABI, callsEndBlock)
+  const starts = await multicall(lemonChefABI, callsStartBlock)
+  const ends = await multicall(lemonChefABI, callsEndBlock)
 
-  return poolsWithEnd.map((mangoPoolConfig, index) => {
+  return poolsWithEnd.map((lemonPoolConfig, index) => {
     const startBlock = starts[index]
     const endBlock = ends[index]
     return {
-      juiceId: mangoPoolConfig.juiceId,
+      juiceId: lemonPoolConfig.juiceId,
       startBlock: new BigNumber(startBlock).toJSON(),
       endBlock: new BigNumber(endBlock).toJSON(),
     }
@@ -58,7 +58,7 @@ export const fetchPoolsTotalStatking = async () => {
     }
   })
 
-  const nonBnbPoolsTotalStaked = await multicall(mangoABI, callsNonBnbPools)
+  const nonBnbPoolsTotalStaked = await multicall(lemonABI, callsNonBnbPools)
   const bnbPoolsTotalStaked = await multicall(wbnbABI, callsBnbPools)
 
   return [

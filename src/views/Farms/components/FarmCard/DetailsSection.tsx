@@ -1,7 +1,7 @@
 import React from 'react'
 import useI18n from 'hooks/useI18n'
 import styled from 'styled-components'
-import { Text, Flex, Link, LinkExternal } from '@mangofarm/uikit'
+import { Text, Flex, Link, LinkExternal } from '@lemonfarm/uikit'
 import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
 import { Address } from 'config/constants/types'
 
@@ -55,8 +55,8 @@ const DetailsSection: React.FC<ExpandableSectionProps> = ({
         <StyledLinkExternal
           href={
             isTokenOnly
-              ? `https://cheeseswap.app/#/swap/${tokenAddresses[process.env.REACT_APP_CHAIN_ID]}`
-              : `https://cheeseswap.app/#/add/${liquidityUrlPathParts}`
+              ? `https://exchange.pancakeswap.finance/#/swap/${tokenAddresses[process.env.REACT_APP_CHAIN_ID]}`
+              : `https://exchange.pancakeswap.finance/#/add/${liquidityUrlPathParts}`
           }
         >
           {lpLabel}

@@ -3,9 +3,9 @@ import { useTotalClaim } from 'hooks/useTickets'
 import { getBalanceNumber } from 'utils/formatBalance'
 import CardValue from './CardValue'
 
-const MangoWinnings = () => {
+const LemonWinnings = () => {
   const { claimAmount } = useTotalClaim()
   return <CardValue value={getBalanceNumber(claimAmount)} />
 }
 
-export default MangoWinnings
+export default LemonWinnings

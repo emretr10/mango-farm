@@ -1,22 +1,22 @@
 import React, { useState, useCallback } from 'react'
 import styled from 'styled-components'
-import { Heading, Card, CardBody, Button } from '@mangofarm/uikit'
+import { Heading, Card, CardBody, Button } from '@lemonfarm/uikit'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import BigNumber from 'bignumber.js'
 import useI18n from 'hooks/useI18n'
 import { useAllHarvest } from 'hooks/useHarvest'
 import useFarmsWithBalance from 'hooks/useFarmsWithBalance'
 import UnlockButton from 'components/UnlockButton'
-import MangoHarvestBalance from './MangoHarvestBalance'
-import MangoWalletBalance from './MangoWalletBalance'
-import { usePriceMangoBusd } from '../../../state/hooks'
+import LemonHarvestBalance from './LemonHarvestBalance'
+import LemonWalletBalance from './LemonWalletBalance'
+import { usePriceLemonBusd } from '../../../state/hooks'
 import useTokenBalance from '../../../hooks/useTokenBalance'
-import { getMangoAddress } from '../../../utils/addressHelpers'
+import { getLemonAddress } from '../../../utils/addressHelpers'
 import useAllEarnings from '../../../hooks/useAllEarnings'
 import { getBalanceNumber } from '../../../utils/formatBalance'
 
 const StyledFarmStakingCard = styled(Card)`
-  background-image: url('/images/mango-bg.svg');
+  background-image: url('/images/lemon-bg.svg');
   background-repeat: no-repeat;
   background-position: top right;
   min-height: 376px;
@@ -44,8 +44,8 @@ const FarmedStakingCard = () => {
   const { account } = useWallet()
   const TranslateString = useI18n()
   const farmsWithBalance = useFarmsWithBalance()
-  const mangoBalance = getBalanceNumber(useTokenBalance(getMangoAddress()))
-  const mangoPrice = usePriceMangoBusd().toNumber()
+  const lemonBalance = getBalanceNumber(useTokenBalance(getLemonAddress()))
+  const lemonPrice = usePriceLemonBusd().toNumber()
   const allEarnings = useAllEarnings()
   const earningsSum = allEarnings.reduce((accum, earning) => {
     return accum + new BigNumber(earning).div(new BigNumber(10).pow(18)).toNumber()
@@ -71,16 +71,16 @@ const FarmedStakingCard = () => {
         <Heading size="xl" mb="24px">
           {TranslateString(542, 'Farms & Staking')}
         </Heading>
-        <CardImage src="/images/mango.svg" alt="mango logo" width={64} height={64} />
+        <CardImage src="/images/lemon.svg" alt="lemon logo" width={64} height={64} />
         <Block>
-          <Label>{TranslateString(544, 'MANGO to Harvest')}</Label>
-          <MangoHarvestBalance earningsSum={earningsSum} />
-          <Label>~${(mangoPrice * earningsSum).toFixed(2)}</Label>
+          <Label>{TranslateString(544, 'LEMON to Harvest')}</Label>
+          <LemonHarvestBalance earningsSum={earningsSum} />
+          <Label>~${(lemonPrice * earningsSum).toFixed(2)}</Label>
         </Block>
         <Block>
-          <Label>{TranslateString(546, 'MANGO in Wallet')}</Label>
-          <MangoWalletBalance mangoBalance={mangoBalance} />
-          <Label>~${(mangoPrice * mangoBalance).toFixed(2)}</Label>
+          <Label>{TranslateString(546, 'LEMON in Wallet')}</Label>
+          <LemonWalletBalance lemonBalance={lemonBalance} />
+          <Label>~${(lemonPrice * lemonBalance).toFixed(2)}</Label>
         </Block>
         <Actions>
           {account ? (
@@ -91,7 +91,7 @@ const FarmedStakingCard = () => {
               fullWidth
             >
               {pendingTx
-                ? TranslateString(548, 'Collecting MANGO')
+                ? TranslateString(548, 'Collecting LEMON')
                 : TranslateString(999, `Harvest all (${balancesWithValue.length})`)}
             </Button>
           ) : (

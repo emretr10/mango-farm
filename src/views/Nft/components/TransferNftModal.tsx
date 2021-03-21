@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import Web3 from 'web3'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
-import { Button, Input, Modal, Text } from '@mangofarm/uikit'
-import { PANMANGO_RABBITS_ADDRESS } from 'config/constants/nfts'
+import { Button, Input, Modal, Text } from '@lemonfarm/uikit'
+import { PANLEMON_RABBITS_ADDRESS } from 'config/constants/nfts'
 import { Nft } from 'config/constants/types'
 import useI18n from 'hooks/useI18n'
-import { usePanmangoRabbits } from 'hooks/useContract'
+import { usePanlemonRabbits } from 'hooks/useContract'
 import InfoRow from './InfoRow'
 
 interface TransferNftModalProps {
@@ -43,7 +43,7 @@ const TransferNftModal: React.FC<TransferNftModalProps> = ({ nft, tokenIds, onSu
   const [error, setError] = useState(null)
   const TranslateString = useI18n()
   const { account } = useWallet()
-  const mangoRabbitsContract = usePanmangoRabbits(PANMANGO_RABBITS_ADDRESS)
+  const lemonRabbitsContract = usePanlemonRabbits(PANLEMON_RABBITS_ADDRESS)
 
   const handleConfirm = async () => {
     try {
@@ -52,7 +52,7 @@ const TransferNftModal: React.FC<TransferNftModalProps> = ({ nft, tokenIds, onSu
       if (!isValidAddress) {
         setError(TranslateString(999, 'Please enter a valid wallet address'))
       } else {
-        await mangoRabbitsContract.methods
+        await lemonRabbitsContract.methods
           .transferFrom(account, value, tokenIds[0])
           .send({ from: account })
           .on('sending', () => {

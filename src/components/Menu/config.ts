@@ -1,4 +1,4 @@
-import { MenuEntry } from '@mangofarm/uikit'
+import { MenuEntry } from '@lemonfarm/uikit'
 
 const config: MenuEntry[] = [
   {
@@ -12,11 +12,11 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'Swap',
-        href: 'https://cheeseswap.app/#/swap?inputCurrency=0x3d29cdb00cb183a0aeceea4fb73f55e1450af3d4&outputCurrency=ETH',
+        href: 'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0x3d29cdb00cb183a0aeceea4fb73f55e1450af3d4&outputCurrency=ETH',
       },
       {
         label: 'Liquidity',
-        href: 'https://cheeseswap.app/#/add/ETH/0x3d29cdb00cb183a0aeceea4fb73f55e1450af3d4',
+        href: 'https://exchange.pancakeswap.finance/#/add/ETH/0x3d29cdb00cb183a0aeceea4fb73f55e1450af3d4',
       },
     ],
   },
@@ -28,7 +28,7 @@ const config: MenuEntry[] = [
    {
      label: 'Juice',
      icon: 'PoolIcon',
-     href: '/mango',
+     href: '/lemon',
   },
   // {
   //   label: 'Pools',
@@ -51,19 +51,19 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'Overview',
-        href: 'https://info.cheeseswap.app/',
+        href: 'https://info.pancakeswap.finance/',
       },
       {
         label: 'Tokens',
-        href: 'https://info.cheeseswap.app/token/0x3d29cdb00cb183a0aeceea4fb73f55e1450af3d4',
+        href: 'https://info.pancakeswap.finance/token/0x3d29cdb00cb183a0aeceea4fb73f55e1450af3d4',
       },
       {
         label: 'Pairs',
-        href: 'https://info.cheeseswap.app/pair/0xB0361a92E2646F9F11f1670484f09D585fe4a419',
+        href: 'https://info.pancakeswap.finance/pair/0xB0361a92E2646F9F11f1670484f09D585fe4a419',
       },
       {
         label: 'Accounts',
-        href: 'https://info.cheeseswap.app/accounts',
+        href: 'https://info.pancakeswap.finance/accounts',
       },
     ],
   },
@@ -73,7 +73,7 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'Github',
-        href: 'https://github.com/mangofarmbsc/',
+        href: 'https://github.com/lemonfarmbsc/',
       },
     ],
   },

@@ -192,7 +192,7 @@
   },
   {
     "inputs": [],
-    "name": "mango",
+    "name": "lemon",
     "outputs": [
       {
         "internalType": "contract IERC20",
@@ -485,7 +485,7 @@
     "inputs": [
       {
         "internalType": "contract IERC20",
-        "name": "_mango",
+        "name": "_lemon",
         "type": "address"
       },
       {

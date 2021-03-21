@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from 'react'
 import styled from 'styled-components'
-import { Button, Heading, Text as UIKitText, ArrowForwardIcon } from '@mangofarm/uikit'
+import { Button, Heading, Text as UIKitText, ArrowForwardIcon } from '@lemonfarm/uikit'
 import useI18n from 'hooks/useI18n'
 import Container from 'components/layout/Container'
 
@@ -65,7 +65,7 @@ const HowItWorks = () => {
             <Text>
               {TranslateString(
                 638,
-                "Winners can trade in their NFTs for a MANGO value until the expiry date written below. If you don't trade in your NFT by then, don’t worry: you’ll still keep it in your wallet!",
+                "Winners can trade in their NFTs for a LEMON value until the expiry date written below. If you don't trade in your NFT by then, don’t worry: you’ll still keep it in your wallet!",
               )}
             </Text>
           </Row>

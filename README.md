@@ -1,4 +1,4 @@
-#  🥭 Mango Frontend
+#  🥭 Lemon Frontend
 
 
-This project contains the main features of the mango application.
+This project contains the main features of the lemon application.

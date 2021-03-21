@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from 'react'
 import styled from 'styled-components'
-import { Button, Text } from '@mangofarm/uikit'
+import { Button, Text } from '@lemonfarm/uikit'
 import useI18n from 'hooks/useI18n'
 import Page from 'components/layout/Page'
 import Container from 'components/layout/Container'
@@ -55,20 +55,20 @@ const ComingSoon = () => {
       <Content>
         <div>
           <Block>
-            <Title as="h2">{TranslateString(999, 'Coming Soon to PanmangoSwap.')}</Title>
+            <Title as="h2">{TranslateString(999, 'Coming Soon to PanlemonSwap.')}</Title>
             <Text mb={3}>
               {TranslateString(
                 504,
-                'You’ll pay for the new tokens using MANGO-BNB LP tokens, which means you need to stake equal amounts of MANGO and BNB in a liquidity pool to take part.',
+                'You’ll pay for the new tokens using LEMON-BNB LP tokens, which means you need to stake equal amounts of LEMON and BNB in a liquidity pool to take part.',
               )}
             </Text>
             <Text mb={3}>
-              <LiquidityLink href="https://exchange.mangoswap.finance/#/add/ETH/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82">
-                {TranslateString(506, 'Get MANGO-BNB LP >')}
+              <LiquidityLink href="https://exchange.lemonswap.finance/#/add/ETH/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82">
+                {TranslateString(506, 'Get LEMON-BNB LP >')}
               </LiquidityLink>
             </Text>
             <Text mb={3}>
-              {TranslateString(508, 'The project gets the BNB, PanmangoSwap burns the MANGO.')}
+              {TranslateString(508, 'The project gets the BNB, PanlemonSwap burns the LEMON.')}
               <br />
               <strong>{TranslateString(510, 'You get the tokens.')}</strong>
             </Text>
@@ -79,7 +79,7 @@ const ComingSoon = () => {
             <Text mb={3}>
               {TranslateString(
                 514,
-                'Launch your project with PanmangoSwap, Binance Smart Chain’s most-used AMM project and liquidity provider, to bring your token directly to the most active and rapidly growing community on BSC.',
+                'Launch your project with PanlemonSwap, Binance Smart Chain’s most-used AMM project and liquidity provider, to bring your token directly to the most active and rapidly growing community on BSC.',
               )}
             </Text>
             <Button

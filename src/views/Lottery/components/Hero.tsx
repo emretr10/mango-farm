@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Heading, Text } from '@mangofarm/uikit'
+import { Heading, Text } from '@lemonfarm/uikit'
 import useI18n from 'hooks/useI18n'
 import Container from 'components/layout/Container'
 import LotteryProgress from './LotteryProgress'
@@ -70,8 +70,8 @@ const Hero = () => {
     <StyledHero>
       <StyledContainer>
         <LeftWrapper>
-          <Title>{TranslateString(999, 'The MANGO Lottery')}</Title>
-          <Blurb>{TranslateString(999, 'Buy tickets with MANGO')}</Blurb>
+          <Title>{TranslateString(999, 'The LEMON Lottery')}</Title>
+          <Blurb>{TranslateString(999, 'Buy tickets with LEMON')}</Blurb>
           <Blurb>{TranslateString(999, 'Win if 2, 3, or 4 of your ticket numbers match!')}</Blurb>
         </LeftWrapper>
         <RightWrapper>

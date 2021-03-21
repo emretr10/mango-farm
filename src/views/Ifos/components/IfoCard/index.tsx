@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import BigNumber from 'bignumber.js'
-import { Card, CardBody, CardRibbon } from '@mangofarm/uikit'
+import { Card, CardBody, CardRibbon } from '@lemonfarm/uikit'
 import { BSC_BLOCK_TIME } from 'config'
 import { Ifo, IfoStatus } from 'config/constants/types'
 import useI18n from 'hooks/useI18n'
@@ -70,7 +70,7 @@ const IfoCard: React.FC<IfoCardProps> = ({ ifo }) => {
     launchTime,
     saleAmount,
     raiseAmount,
-    mangoToBurn,
+    lemonToBurn,
     projectSiteUrl,
     currency,
     currencyAddress,
@@ -169,7 +169,7 @@ const IfoCard: React.FC<IfoCardProps> = ({ ifo }) => {
           launchTime={launchTime}
           saleAmount={saleAmount}
           raiseAmount={raiseAmount}
-          mangoToBurn={mangoToBurn}
+          lemonToBurn={lemonToBurn}
           projectSiteUrl={projectSiteUrl}
           raisingAmount={state.raisingAmount}
           totalAmount={state.totalAmount}

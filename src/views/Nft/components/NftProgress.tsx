@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-import { Card, CardBody, Heading, OpenNewIcon, Text, Link as UIKitLink, Progress } from '@mangofarm/uikit'
+import { Card, CardBody, Heading, OpenNewIcon, Text, Link as UIKitLink, Progress } from '@lemonfarm/uikit'
 import { BSC_BLOCK_TIME } from 'config'
 import useI18n from 'hooks/useI18n'
 import useBlock from 'hooks/useBlock'
@@ -79,7 +79,7 @@ const NftProgress = () => {
             )}{' '}
           </div>
         </InfoRow>
-        <Message>{TranslateString(999, 'NFTs can be traded in for MANGO until the above block height')}</Message>
+        <Message>{TranslateString(999, 'NFTs can be traded in for LEMON until the above block height')}</Message>
       </CardBody>
     </Card>
   )

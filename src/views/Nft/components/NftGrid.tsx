@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { BaseLayout } from '@mangofarm/uikit'
+import { BaseLayout } from '@lemonfarm/uikit'
 
 const NftGrid = styled(BaseLayout)`
   padding-bottom: 24px;

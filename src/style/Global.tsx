@@ -1,10 +1,10 @@
 import { createGlobalStyle } from 'styled-components'
 // eslint-disable-next-line import/no-unresolved
-import { MangoTheme } from '@mangofarm/uikit'
+import { LemonTheme } from '@lemonfarm/uikit'
 
 declare module 'styled-components' {
   /* eslint-disable @typescript-eslint/no-empty-interface */
-  export interface DefaultTheme extends MangoTheme {}
+  export interface DefaultTheme extends LemonTheme {}
 }
 
 const GlobalStyle = createGlobalStyle`

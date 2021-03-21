@@ -1,15 +1,15 @@
 import React from 'react'
-import { Card, CardBody, Heading, Text } from '@mangofarm/uikit'
+import { Card, CardBody, Heading, Text } from '@lemonfarm/uikit'
 import BigNumber from 'bignumber.js/bignumber'
 import styled from 'styled-components'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { useTotalSupply, useBurnedBalance } from 'hooks/useTokenBalance'
 import useI18n from 'hooks/useI18n'
-import { getMangoAddress } from 'utils/addressHelpers'
+import { getLemonAddress } from 'utils/addressHelpers'
 import CardValue from './CardValue'
-import { useFarms, usePriceMangoBusd } from '../../../state/hooks'
+import { useFarms, usePriceLemonBusd } from '../../../state/hooks'
 
-const StyledMangoStats = styled(Card)`
+const StyledLemonStats = styled(Card)`
   margin-left: auto;
   margin-right: auto;
 `
@@ -22,26 +22,26 @@ const Row = styled.div`
   margin-bottom: 8px;
 `
 
-const MangoStats = () => {
+const LemonStats = () => {
   const TranslateString = useI18n()
   const totalSupply = useTotalSupply()
-  const burnedBalance = useBurnedBalance(getMangoAddress())
+  const burnedBalance = useBurnedBalance(getLemonAddress())
   const farms = useFarms()
-  const mangoPrice = usePriceMangoBusd()
+  const lemonPrice = usePriceLemonBusd()
   const circSupply = totalSupply ? totalSupply.minus(burnedBalance) : new BigNumber(0)
-  const mangoSupply = getBalanceNumber(circSupply)
-  const marketCap = mangoPrice.times(circSupply)
+  const lemonSupply = getBalanceNumber(circSupply)
+  const marketCap = lemonPrice.times(circSupply)
 
-  let mangoPerBlock = 0
-  if (farms && farms[0] && farms[0].mangoPerBlock) {
-    mangoPerBlock = new BigNumber(farms[0].mangoPerBlock).div(new BigNumber(10).pow(18)).toNumber()
+  let lemonPerBlock = 0
+  if (farms && farms[0] && farms[0].lemonPerBlock) {
+    lemonPerBlock = new BigNumber(farms[0].lemonPerBlock).div(new BigNumber(10).pow(18)).toNumber()
   }
 
   return (
-    <StyledMangoStats>
+    <StyledLemonStats>
       <CardBody>
         <Heading size="xl" mb="24px">
-          {TranslateString(534, 'Mango Stats')}
+          {TranslateString(534, 'Lemon Stats')}
         </Heading>
         <Row>
           <Text fontSize="14px">{TranslateString(10005, 'Market Cap')}</Text>
@@ -57,17 +57,17 @@ const MangoStats = () => {
         </Row>
         <Row>
           <Text fontSize="14px">{TranslateString(10004, 'Circulating Supply')}</Text>
-          {mangoSupply && <CardValue fontSize="14px" value={mangoSupply} decimals={0} />}
+          {lemonSupply && <CardValue fontSize="14px" value={lemonSupply} decimals={0} />}
         </Row>
         <Row>
-          <Text fontSize="14px">{TranslateString(540, 'New MANGO/block')}</Text>
+          <Text fontSize="14px">{TranslateString(540, 'New LEMON/block')}</Text>
           <Text bold fontSize="14px">
-            {mangoPerBlock}
+            {lemonPerBlock}
           </Text>
         </Row>
       </CardBody>
-    </StyledMangoStats>
+    </StyledLemonStats>
   )
 }
 
-export default MangoStats
+export default LemonStats

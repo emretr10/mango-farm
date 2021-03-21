@@ -1,12 +1,12 @@
 import { Nft } from './types'
 
 export const RABBIT_MINTING_FARM_ADDRESS = '0x7c8b60d2b859a38c8B9b5B6CB4565485cb637c7a'
-export const PANMANGO_RABBITS_ADDRESS = '0xDf7952B35f24aCF7fC0487D01c8d5690a60DBa07'
+export const PANLEMON_RABBITS_ADDRESS = '0xDf7952B35f24aCF7fC0487D01c8d5690a60DBa07'
 
 const Nfts: Nft[] = [
   {
     name: 'Swapsies',
-    description: 'These bunnies love nothing more than swapping mangos. Especially on BSC.',
+    description: 'These bunnies love nothing more than swapping lemons. Especially on BSC.',
     originalImage: 'https://gateway.pinata.cloud/ipfs/QmXdHqg3nywpNJWDevJQPtkz93vpfoHcZWQovFz2nmtPf5/swapsies.png',
     previewImage: 'swapsies-preview.png',
     blurImage: 'swapsies-blur.png',
@@ -24,7 +24,7 @@ const Nfts: Nft[] = [
   },
   {
     name: 'Blueberries',
-    description: "These bunnies like their mangos with blueberries. What's your favorite topping?",
+    description: "These bunnies like their lemons with blueberries. What's your favorite topping?",
     originalImage: 'https://gateway.pinata.cloud/ipfs/QmXdHqg3nywpNJWDevJQPtkz93vpfoHcZWQovFz2nmtPf5/blueberries.png',
     previewImage: 'blueberries-preview.png',
     blurImage: 'blueberries-blur.png',
@@ -33,7 +33,7 @@ const Nfts: Nft[] = [
   },
   {
     name: 'Circular',
-    description: "Love makes the world go 'round... but so do mangos. And these bunnies know it.",
+    description: "Love makes the world go 'round... but so do lemons. And these bunnies know it.",
     originalImage: 'https://gateway.pinata.cloud/ipfs/QmXdHqg3nywpNJWDevJQPtkz93vpfoHcZWQovFz2nmtPf5/circular.png',
     previewImage: 'circular-preview.png',
     blurImage: 'circular-blur.png',
@@ -42,7 +42,7 @@ const Nfts: Nft[] = [
   },
   {
     name: 'Sparkle',
-    description: 'It’s sparkling juice, mangos, and even lottery tickets! This bunny really loves it.',
+    description: 'It’s sparkling juice, lemons, and even lottery tickets! This bunny really loves it.',
     originalImage: 'https://gateway.pinata.cloud/ipfs/QmXdHqg3nywpNJWDevJQPtkz93vpfoHcZWQovFz2nmtPf5/sparkle.png',
     previewImage: 'sparkle-preview.png',
     blurImage: 'sparkle-blur.png',

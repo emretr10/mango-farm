@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
-import { Button, Modal, Text } from '@mangofarm/uikit'
+import { Button, Modal, Text } from '@lemonfarm/uikit'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { RABBIT_MINTING_FARM_ADDRESS } from 'config/constants/nfts'
-import { getMangoAddress } from 'utils/addressHelpers'
+import { getLemonAddress } from 'utils/addressHelpers'
 import { Nft } from 'config/constants/types'
 import useTokenBalance from 'hooks/useTokenBalance'
 import useI18n from 'hooks/useI18n'
@@ -37,8 +37,8 @@ const ClaimNftModal: React.FC<ClaimNftModalProps> = ({ nft, onSuccess, onDismiss
   const TranslateString = useI18n()
   const { account } = useWallet()
   const rabbitMintingContract = useRabbitMintingFarm(RABBIT_MINTING_FARM_ADDRESS)
-  const mangoBalance = useTokenBalance(getMangoAddress())
-  const mangoInWallet = getBalanceNumber(mangoBalance)
+  const lemonBalance = useTokenBalance(getLemonAddress())
+  const lemonInWallet = getBalanceNumber(lemonBalance)
 
   const handleConfirm = async () => {
     try {
@@ -63,10 +63,10 @@ const ClaimNftModal: React.FC<ClaimNftModalProps> = ({ nft, onSuccess, onDismiss
   }
 
   useEffect(() => {
-    if (mangoInWallet === 0) {
-      setError('You must have a MANGO balance greater than zero to claim NFT')
+    if (lemonInWallet === 0) {
+      setError('You must have a LEMON balance greater than zero to claim NFT')
     }
-  }, [mangoInWallet, setError])
+  }, [lemonInWallet, setError])
 
   return (
     <Modal title={TranslateString(999, 'Claim NFT')} onDismiss={onDismiss}>
@@ -85,7 +85,7 @@ const ClaimNftModal: React.FC<ClaimNftModalProps> = ({ nft, onSuccess, onDismiss
         <Button fullWidth variant="secondary" onClick={onDismiss}>
           {TranslateString(462, 'Cancel')}
         </Button>
-        <Button fullWidth onClick={handleConfirm} disabled={!account || isLoading || mangoInWallet <= 0}>
+        <Button fullWidth onClick={handleConfirm} disabled={!account || isLoading || lemonInWallet <= 0}>
           {TranslateString(464, 'Confirm')}
         </Button>
       </Actions>

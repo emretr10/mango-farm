@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react'
 import BigNumber from 'bignumber.js'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import { provider } from 'web3-core'
-import mangoABI from 'config/abi/mango.json'
+import lemonABI from 'config/abi/lemon.json'
 import { getContract } from 'utils/web3'
 import { getTokenBalance } from 'utils/erc20'
-import { getMangoAddress } from 'utils/addressHelpers'
+import { getLemonAddress } from 'utils/addressHelpers'
 import useRefresh from './useRefresh'
 
 const useTokenBalance = (tokenAddress: string) => {
@@ -33,8 +33,8 @@ export const useTotalSupply = () => {
 
   useEffect(() => {
     async function fetchTotalSupply() {
-      const mangoContract = getContract(mangoABI, getMangoAddress())
-      const supply = await mangoContract.methods.totalSupply().call()
+      const lemonContract = getContract(lemonABI, getLemonAddress())
+      const supply = await lemonContract.methods.totalSupply().call()
       setTotalSupply(new BigNumber(supply))
     }
 
@@ -50,8 +50,8 @@ export const useBurnedBalance = (tokenAddress: string) => {
 
   useEffect(() => {
     const fetchBalance = async () => {
-      const mangoContract = getContract(mangoABI, getMangoAddress())
-      const bal = await mangoContract.methods.balanceOf('0x000000000000000000000000000000000000dEaD').call()
+      const lemonContract = getContract(lemonABI, getLemonAddress())
+      const bal = await lemonContract.methods.balanceOf('0x000000000000000000000000000000000000dEaD').call()
       setBalance(new BigNumber(bal))
     }
 

@@ -1,18 +1,18 @@
 import BigNumber from 'bignumber.js'
 import React, { useCallback, useState } from 'react'
 import styled from 'styled-components'
-import { Button, IconButton, useModal, AddIcon, Image } from '@mangofarm/uikit'
+import { Button, IconButton, useModal, AddIcon, Image } from '@lemonfarm/uikit'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import UnlockButton from 'components/UnlockButton'
 import Label from 'components/Label'
 import { useERC20 } from 'hooks/useContract'
-import { useMangoApprove } from 'hooks/useApprove'
+import { useLemonApprove } from 'hooks/useApprove'
 import useI18n from 'hooks/useI18n'
-import { useMangoStake } from 'hooks/useStake'
-import { useMangoUnstake } from 'hooks/useUnstake'
+import { useLemonStake } from 'hooks/useStake'
+import { useLemonUnstake } from 'hooks/useUnstake'
 import useBlock from 'hooks/useBlock'
 import { getBalanceNumber } from 'utils/formatBalance'
-import { useMangoHarvest } from 'hooks/useHarvest'
+import { useLemonHarvest } from 'hooks/useHarvest'
 import Balance from 'components/Balance'
 import { QuoteToken, PoolCategory } from 'config/constants/types'
 import { Pool } from 'state/types'
@@ -58,10 +58,10 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
   const stakingTokenContract = useERC20(stakingTokenAddress)
   const { account } = useWallet()
   const block = useBlock()
-  const { onApprove } = useMangoApprove(stakingTokenContract, juiceId)
-  const { onStake } = useMangoStake(juiceId, isBnbPool)
-  const { onUnstake } = useMangoUnstake(juiceId)
-  const { onReward } = useMangoHarvest(juiceId, isBnbPool)
+  const { onApprove } = useLemonApprove(stakingTokenContract, juiceId)
+  const { onStake } = useLemonStake(juiceId, isBnbPool)
+  const { onUnstake } = useLemonUnstake(juiceId)
+  const { onReward } = useLemonHarvest(juiceId, isBnbPool)
 
   const [requestedApproval, setRequestedApproval] = useState(false)
   const [pendingTx, setPendingTx] = useState(false)
@@ -73,7 +73,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
 
   const blocksUntilStart = Math.max(startBlock - block, 0)
   const blocksRemaining = Math.max(endBlock - block, 0)
-  const isOldJuice = stakingTokenName === QuoteToken.MANGO
+  const isOldJuice = stakingTokenName === QuoteToken.LEMON
   const accountHasStakedBalance = stakedBalance?.toNumber() > 0
   const needsApproval = !accountHasStakedBalance && !allowance.toNumber() && !isBnbPool
   const isCardActive = isFinished && accountHasStakedBalance

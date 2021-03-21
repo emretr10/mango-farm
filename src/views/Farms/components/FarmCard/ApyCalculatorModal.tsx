@@ -1,16 +1,16 @@
 import React from 'react'
 import BigNumber from 'bignumber.js'
 import styled from 'styled-components'
-import { Modal, Text, LinkExternal, Flex } from '@mangofarm/uikit'
+import { Modal, Text, LinkExternal, Flex } from '@lemonfarm/uikit'
 import useI18n from 'hooks/useI18n'
 import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
-import { calculateMangoEarnedPerThousandDollars, apyModalRoi } from 'utils/compoundApyHelpers'
+import { calculateLemonEarnedPerThousandDollars, apyModalRoi } from 'utils/compoundApyHelpers'
 import { Address } from 'config/constants/types'
 
 interface ApyCalculatorModalProps {
   onDismiss?: () => void
   lpLabel?: string
-  mangoPrice?: BigNumber
+  lemonPrice?: BigNumber
   apy?: BigNumber
   quoteTokenAdresses?: Address
   quoteTokenSymbol?: string
@@ -39,18 +39,18 @@ const ApyCalculatorModal: React.FC<ApyCalculatorModalProps> = ({
   quoteTokenAdresses,
   quoteTokenSymbol,
   tokenAddresses,
-  mangoPrice,
+  lemonPrice,
   apy,
 }) => {
   const TranslateString = useI18n()
   const liquidityUrlPathParts = getLiquidityUrlPathParts({ quoteTokenAdresses, quoteTokenSymbol, tokenAddresses })
   const farmApy = apy.times(new BigNumber(100)).toNumber()
-  const oneThousandDollarsWorthOfMango = 1000 / mangoPrice.toNumber()
+  const oneThousandDollarsWorthOfLemon = 1000 / lemonPrice.toNumber()
 
-  const mangoEarnedPerThousand1D = calculateMangoEarnedPerThousandDollars({ numberOfDays: 1, farmApy, mangoPrice })
-  const mangoEarnedPerThousand7D = calculateMangoEarnedPerThousandDollars({ numberOfDays: 7, farmApy, mangoPrice })
-  const mangoEarnedPerThousand30D = calculateMangoEarnedPerThousandDollars({ numberOfDays: 30, farmApy, mangoPrice })
-  const mangoEarnedPerThousand365D = calculateMangoEarnedPerThousandDollars({ numberOfDays: 365, farmApy, mangoPrice })
+  const lemonEarnedPerThousand1D = calculateLemonEarnedPerThousandDollars({ numberOfDays: 1, farmApy, lemonPrice })
+  const lemonEarnedPerThousand7D = calculateLemonEarnedPerThousandDollars({ numberOfDays: 7, farmApy, lemonPrice })
+  const lemonEarnedPerThousand30D = calculateLemonEarnedPerThousandDollars({ numberOfDays: 30, farmApy, lemonPrice })
+  const lemonEarnedPerThousand365D = calculateLemonEarnedPerThousandDollars({ numberOfDays: 365, farmApy, lemonPrice })
 
   return (
     <Modal title="ROI" onDismiss={onDismiss}>
@@ -67,7 +67,7 @@ const ApyCalculatorModal: React.FC<ApyCalculatorModalProps> = ({
         </GridItem>
         <GridItem>
           <Text fontSize="12px" bold color="textSubtle" textTransform="uppercase" mb="20px">
-            {TranslateString(999, 'MANGO per $1000')}
+            {TranslateString(999, 'LEMON per $1000')}
           </Text>
         </GridItem>
         {/* 1 day row */}
@@ -76,11 +76,11 @@ const ApyCalculatorModal: React.FC<ApyCalculatorModalProps> = ({
         </GridItem>
         <GridItem>
           <Text>
-            {apyModalRoi({ amountEarned: mangoEarnedPerThousand1D, amountInvested: oneThousandDollarsWorthOfMango })}%
+            {apyModalRoi({ amountEarned: lemonEarnedPerThousand1D, amountInvested: oneThousandDollarsWorthOfLemon })}%
           </Text>
         </GridItem>
         <GridItem>
-          <Text>{mangoEarnedPerThousand1D}</Text>
+          <Text>{lemonEarnedPerThousand1D}</Text>
         </GridItem>
         {/* 7 day row */}
         <GridItem>
@@ -88,11 +88,11 @@ const ApyCalculatorModal: React.FC<ApyCalculatorModalProps> = ({
         </GridItem>
         <GridItem>
           <Text>
-            {apyModalRoi({ amountEarned: mangoEarnedPerThousand7D, amountInvested: oneThousandDollarsWorthOfMango })}%
+            {apyModalRoi({ amountEarned: lemonEarnedPerThousand7D, amountInvested: oneThousandDollarsWorthOfLemon })}%
           </Text>
         </GridItem>
         <GridItem>
-          <Text>{mangoEarnedPerThousand7D}</Text>
+          <Text>{lemonEarnedPerThousand7D}</Text>
         </GridItem>
         {/* 30 day row */}
         <GridItem>
@@ -100,11 +100,11 @@ const ApyCalculatorModal: React.FC<ApyCalculatorModalProps> = ({
         </GridItem>
         <GridItem>
           <Text>
-            {apyModalRoi({ amountEarned: mangoEarnedPerThousand30D, amountInvested: oneThousandDollarsWorthOfMango })}%
+            {apyModalRoi({ amountEarned: lemonEarnedPerThousand30D, amountInvested: oneThousandDollarsWorthOfLemon })}%
           </Text>
         </GridItem>
         <GridItem>
-          <Text>{mangoEarnedPerThousand30D}</Text>
+          <Text>{lemonEarnedPerThousand30D}</Text>
         </GridItem>
         {/* 365 day / APY row */}
         <GridItem>
@@ -112,11 +112,11 @@ const ApyCalculatorModal: React.FC<ApyCalculatorModalProps> = ({
         </GridItem>
         <GridItem>
           <Text>
-            {apyModalRoi({ amountEarned: mangoEarnedPerThousand365D, amountInvested: oneThousandDollarsWorthOfMango })}%
+            {apyModalRoi({ amountEarned: lemonEarnedPerThousand365D, amountInvested: oneThousandDollarsWorthOfLemon })}%
           </Text>
         </GridItem>
         <GridItem>
-          <Text>{mangoEarnedPerThousand365D}</Text>
+          <Text>{lemonEarnedPerThousand365D}</Text>
         </GridItem>
       </Grid>
       <Description fontSize="12px" color="textSubtle">
@@ -126,7 +126,7 @@ const ApyCalculatorModal: React.FC<ApyCalculatorModalProps> = ({
         )}
       </Description>
       <Flex justifyContent="center">
-        <LinkExternal href={`https://exchange.mangoswap.finance/#/add/${liquidityUrlPathParts}`}>
+        <LinkExternal href={`https://exchange.lemonswap.finance/#/add/${liquidityUrlPathParts}`}>
           {TranslateString(999, 'Get')} {lpLabel}
         </LinkExternal>
       </Flex>

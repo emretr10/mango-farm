@@ -2,8 +2,8 @@
   {
     "inputs": [
       {
-        "internalType": "contract MangoFarm",
-        "name": "_mango",
+        "internalType": "contract LemonFarm",
+        "name": "_lemon",
         "type": "address"
       },
       {
@@ -18,7 +18,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "_mangoPerBlock",
+        "name": "_lemonPerBlock",
         "type": "uint256"
       },
       {
@@ -261,10 +261,10 @@
   },
   {
     "inputs": [],
-    "name": "mango",
+    "name": "lemon",
     "outputs": [
       {
-        "internalType": "contract MangoFarm",
+        "internalType": "contract LemonFarm",
         "name": "",
         "type": "address"
       }
@@ -274,7 +274,7 @@
   },
   {
     "inputs": [],
-    "name": "mangoPerBlock",
+    "name": "lemonPerBlock",
     "outputs": [
       {
         "internalType": "uint256",
@@ -318,7 +318,7 @@
         "type": "address"
       }
     ],
-    "name": "pendingMango",
+    "name": "pendingLemon",
     "outputs": [
       {
         "internalType": "uint256",
@@ -356,7 +356,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "accMangoPerShare",
+        "name": "accLemonPerShare",
         "type": "uint256"
       },
       {
@@ -472,7 +472,7 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "_mangoPerBlock",
+        "name": "_lemonPerBlock",
         "type": "uint256"
       }
     ],

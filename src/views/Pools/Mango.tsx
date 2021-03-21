@@ -3,7 +3,7 @@ import { Route, useRouteMatch } from 'react-router-dom'
 import BigNumber from 'bignumber.js'
 import styled from 'styled-components'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
-import { Heading } from '@mangofarm/uikit'
+import { Heading } from '@lemonfarm/uikit'
 import { BLOCKS_PER_YEAR } from 'config'
 import orderBy from 'lodash/orderBy'
 import partition from 'lodash/partition'
@@ -73,7 +73,7 @@ const Farm: React.FC = () => {
             {TranslateString(282, 'JUICE Pool')}
           </Heading>
           <ul>
-            <li>{TranslateString(580, 'Stake MANGO to earn new tokens.')}</li>
+            <li>{TranslateString(580, 'Stake LEMON to earn new tokens.')}</li>
             <li>{TranslateString(404, 'You can unstake at any time.')}</li>
             <li>{TranslateString(406, 'Rewards are calculated per block.')}</li>
           </ul>

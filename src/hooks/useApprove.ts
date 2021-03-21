@@ -5,7 +5,7 @@ import { ethers } from 'ethers'
 import { useDispatch } from 'react-redux'
 import { updateUserAllowance, fetchFarmUserDataAsync } from 'state/actions'
 import { approve } from 'utils/callHelpers'
-import { useMasterchef, useMango, useMangoChef, useLottery } from './useContract'
+import { useMasterchef, useLemon, useLemonChef, useLottery } from './useContract'
 
 // Approve a Farm
 export const useApprove = (lpContract: Contract) => {
@@ -27,20 +27,20 @@ export const useApprove = (lpContract: Contract) => {
 }
 
 // Approve a Pool
-export const useMangoApprove = (lpContract: Contract, juiceId) => {
+export const useLemonApprove = (lpContract: Contract, juiceId) => {
   const dispatch = useDispatch()
   const { account }: { account: string } = useWallet()
-  const mangoChefContract = useMangoChef(juiceId)
+  const lemonChefContract = useLemonChef(juiceId)
 
   const handleApprove = useCallback(async () => {
     try {
-      const tx = await approve(lpContract, mangoChefContract, account)
+      const tx = await approve(lpContract, lemonChefContract, account)
       dispatch(updateUserAllowance(juiceId, account))
       return tx
     } catch (e) {
       return false
     }
-  }, [account, dispatch, lpContract, mangoChefContract, juiceId])
+  }, [account, dispatch, lpContract, lemonChefContract, juiceId])
 
   return { onApprove: handleApprove }
 }
@@ -48,17 +48,17 @@ export const useMangoApprove = (lpContract: Contract, juiceId) => {
 // Approve the lottery
 export const useLotteryApprove = () => {
   const { account }: { account: string } = useWallet()
-  const mangoContract = useMango()
+  const lemonContract = useLemon()
   const lotteryContract = useLottery()
 
   const handleApprove = useCallback(async () => {
     try {
-      const tx = await approve(mangoContract, lotteryContract, account)
+      const tx = await approve(lemonContract, lotteryContract, account)
       return tx
     } catch (e) {
       return false
     }
-  }, [account, mangoContract, lotteryContract])
+  }, [account, lemonContract, lotteryContract])
 
   return { onApprove: handleApprove }
 }

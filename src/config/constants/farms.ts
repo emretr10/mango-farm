@@ -6,12 +6,12 @@ const farms: FarmConfig[] = [
     {
     pid: 0,
     risk: 2,
-    lpSymbol: 'MANGO-BUSD LP',
+    lpSymbol: 'LEMON-BUSD LP',
     lpAddresses: {
       97: '',
       56: '0xE5fE53149A278aF40ACb04334c4140eE7444BE4B',
     },
-    tokenSymbol: 'MANGO',
+    tokenSymbol: 'LEMON',
     tokenAddresses: {
       97: '',
       56: '0x3D29cdB00CB183a0aEcEEa4fB73F55E1450af3d4',
@@ -23,12 +23,12 @@ const farms: FarmConfig[] = [
    {
     pid: 1,
     risk: 2,
-    lpSymbol: 'MANGO-BNB LP',
+    lpSymbol: 'LEMON-BNB LP',
     lpAddresses: {
       97: '',
       56: '0xB0361a92E2646F9F11f1670484f09D585fe4a419',
     },
-    tokenSymbol: 'MANGO',
+    tokenSymbol: 'LEMON',
     tokenAddresses: {
       97: '',
       56: '0x3D29cdB00CB183a0aEcEEa4fB73F55E1450af3d4',
@@ -40,12 +40,12 @@ const farms: FarmConfig[] = [
     {
      pid: 10,
      risk: 2,
-     lpSymbol: 'MANGO-USDT LP',
+     lpSymbol: 'LEMON-USDT LP',
      lpAddresses: {
        97: '',
        56: '0x4aB5135A7f7A814a67a3F0638e42F55C7caE2F69',
      },
-     tokenSymbol: 'MANGO',
+     tokenSymbol: 'LEMON',
      tokenAddresses: {
        97: '',
        56: '0x3D29cdB00CB183a0aEcEEa4fB73F55E1450af3d4',
@@ -56,12 +56,12 @@ const farms: FarmConfig[] = [
     {
    pid: 4,
    risk: 3,
-   lpSymbol: 'MANGO-CHS LP',
+   lpSymbol: 'LEMON-CHS LP',
    lpAddresses: {
      97: '',
      56: '0xF63c29444fdE98d8227088Cd4AEb48E33B6b0000',
    },
-   tokenSymbol: 'MANGO',
+   tokenSymbol: 'LEMON',
    tokenAddresses: {
      97: '',
      56: '0x3D29cdB00CB183a0aEcEEa4fB73F55E1450af3d4',
@@ -72,12 +72,12 @@ const farms: FarmConfig[] = [
  {
   pid: 5,
   risk: 3,
-  lpSymbol: 'MANGO-PIZZA LP',
+  lpSymbol: 'LEMON-PIZZA LP',
   lpAddresses: {
     97: '',
     56: '0x80bEC1095372cE1A01e3ACd2A5B5eC3140DdFA20',
   },
-  tokenSymbol: 'MANGO',
+  tokenSymbol: 'LEMON',
   tokenAddresses: {
     97: '',
     56: '0x3D29cdB00CB183a0aEcEEa4fB73F55E1450af3d4',
@@ -218,12 +218,12 @@ const farms: FarmConfig[] = [
   pid: 11,
   risk: 5,
   isTokenOnly: true,
-  lpSymbol: 'MANGO',
+  lpSymbol: 'LEMON',
   lpAddresses: {
     97: '',
     56: '0xE5fE53149A278aF40ACb04334c4140eE7444BE4B', // EGG-BUSD LP
   },
-  tokenSymbol: 'MANGO',
+  tokenSymbol: 'LEMON',
   tokenAddresses: {
     97: '',
     56: '0x3D29cdB00CB183a0aEcEEa4fB73F55E1450af3d4',

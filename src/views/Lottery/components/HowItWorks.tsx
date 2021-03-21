@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Text, Heading, Link, Image } from '@mangofarm/uikit'
+import { Text, Heading, Link, Image } from '@lemonfarm/uikit'
 import useI18n from 'hooks/useI18n'
 
 const LayoutWrapper = styled.div`
@@ -28,17 +28,17 @@ const HowItWorks = () => {
 
   return (
     <LayoutWrapper>
-      <StyledImage src="/images/mango-lottery-bunny.png" alt="lottery bunny" width={163} height={140} />
+      <StyledImage src="/images/lemon-lottery-bunny.png" alt="lottery bunny" width={163} height={140} />
       <StyledHeading size="lg" as="h3" color="secondary">
         {TranslateString(999, 'How it works')}
       </StyledHeading>
       <Text fontSize="16px">
         {TranslateString(
           999,
-          'Spend MANGO to buy tickets, contributing to the lottery pot. Win prizes if 2, 3, or 4 of your ticket numbers match the winning numbers and their exact order!',
+          'Spend LEMON to buy tickets, contributing to the lottery pot. Win prizes if 2, 3, or 4 of your ticket numbers match the winning numbers and their exact order!',
         )}
       </Text>
-      <StyledLink href="https://docs.mangoswap.finance/lottery-1">Read more</StyledLink>
+      <StyledLink href="https://docs.lemonswap.finance/lottery-1">Read more</StyledLink>
     </LayoutWrapper>
   )
 }

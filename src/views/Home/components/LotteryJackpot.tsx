@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text } from '@mangofarm/uikit'
+import { Text } from '@lemonfarm/uikit'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { useTotalRewards } from 'hooks/useTickets'
 

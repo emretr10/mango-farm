@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react'
 import BigNumber from 'bignumber.js'
 import styled, { keyframes } from 'styled-components'
-import { Flex, Text, Skeleton } from '@mangofarm/uikit'
+import { Flex, Text, Skeleton } from '@lemonfarm/uikit'
 import { communityFarms } from 'config/constants'
 import { Farm } from 'state/types'
 import { provider } from 'web3-core'
@@ -84,20 +84,20 @@ const ExpandingWrapper = styled.div<{ expanded: boolean }>`
 interface FarmCardProps {
   farm: FarmWithStakedValue
   removed: boolean
-  mangoPrice?: BigNumber
+  lemonPrice?: BigNumber
   bnbPrice?: BigNumber
   ethereum?: provider
   account?: string
 }
 
-const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, mangoPrice, bnbPrice, ethereum, account }) => {
+const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, lemonPrice, bnbPrice, ethereum, account }) => {
   const TranslateString = useI18n()
 
   const [showExpandableSection, setShowExpandableSection] = useState(false)
 
   // const isCommunityFarm = communityFarms.includes(farm.tokenSymbol)
-  // We assume the token name is coin pair + lp e.g. MANGO-BNB LP, LINK-BNB LP,
-  // NAR-MANGO LP. The images should be mango-bnb.svg, link-bnb.svg, nar-mango.svg
+  // We assume the token name is coin pair + lp e.g. LEMON-BNB LP, LINK-BNB LP,
+  // NAR-LEMON LP. The images should be lemon-bnb.svg, link-bnb.svg, nar-lemon.svg
   // const farmImage = farm.lpSymbol.split(' ')[0].toLocaleLowerCase()
   const farmImage = farm.isTokenOnly
     ? farm.tokenSymbol.toLowerCase()
@@ -110,18 +110,18 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, mangoPrice, bnbPrice
     if (farm.quoteTokenSymbol === QuoteToken.BNB) {
       return bnbPrice.times(farm.lpTotalInQuoteToken)
     }
-    if (farm.quoteTokenSymbol === QuoteToken.MANGO) {
-      return mangoPrice.times(farm.lpTotalInQuoteToken)
+    if (farm.quoteTokenSymbol === QuoteToken.LEMON) {
+      return lemonPrice.times(farm.lpTotalInQuoteToken)
     }
     return farm.lpTotalInQuoteToken
-  }, [bnbPrice, mangoPrice, farm.lpTotalInQuoteToken, farm.quoteTokenSymbol])
+  }, [bnbPrice, lemonPrice, farm.lpTotalInQuoteToken, farm.quoteTokenSymbol])
 
   const totalValueFormated = totalValue
     ? `$${Number(totalValue).toLocaleString(undefined, { maximumFractionDigits: 0 })}`
     : '-'
 
   const lpLabel = farm.lpSymbol
-  const earnLabel = 'MANGO'
+  const earnLabel = 'LEMON'
   const farmAPY =
     farm.apy &&
     farm.apy.times(new BigNumber(100)).toNumber().toLocaleString(undefined, {
@@ -133,7 +133,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, mangoPrice, bnbPrice
 
   return (
     <FCard>
-      {farm.tokenSymbol === 'MANGO' && <StyledCardAccent />}
+      {farm.tokenSymbol === 'LEMON' && <StyledCardAccent />}
       <CardHeading
         lpLabel={lpLabel}
         multiplier={farm.multiplier}
@@ -153,7 +153,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, mangoPrice, bnbPrice
                   quoteTokenAdresses={quoteTokenAdresses}
                   quoteTokenSymbol={quoteTokenSymbol}
                   tokenAddresses={tokenAddresses}
-                  mangoPrice={mangoPrice}
+                  lemonPrice={lemonPrice}
                   apy={farm.apy}
                 />
                 {farmAPY}%

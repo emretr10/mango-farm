@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Text, Heading, BaseLayout, Button, LinkExternal, Flex, Image } from '@mangofarm/uikit'
+import { Text, Heading, BaseLayout, Button, LinkExternal, Flex, Image } from '@lemonfarm/uikit'
 import { ifosConfig } from 'config/constants'
 import useI18n from 'hooks/useI18n'
 import IfoCard from './components/IfoCard'
@@ -48,20 +48,20 @@ const Ifo = () => {
           <Title as="h2">{TranslateString(592, 'How to take part')}</Title>
           <Heading mb="16px">{TranslateString(594, 'Before Sale')}:</Heading>
           <List>
-            <li>{TranslateString(596, 'Buy MANGO and BNB tokens')}</li>
-            <li>{TranslateString(598, 'Get MANGO-BNB LP tokens by adding MANGO and BNB liquidity')}</li>
+            <li>{TranslateString(596, 'Buy LEMON and BNB tokens')}</li>
+            <li>{TranslateString(598, 'Get LEMON-BNB LP tokens by adding LEMON and BNB liquidity')}</li>
           </List>
           <Flex mb="16px">
-            <LinkExternal href="https://exchange.mangoswap.finance/#/swap" mr="16px">
-              {TranslateString(999, 'Buy mango')}
+            <LinkExternal href="https://exchange.lemonswap.finance/#/swap" mr="16px">
+              {TranslateString(999, 'Buy lemon')}
             </LinkExternal>
-            <LinkExternal href="https://exchange.mangoswap.finance/#/add/ETH/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82">
+            <LinkExternal href="https://exchange.lemonswap.finance/#/add/ETH/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82">
               {TranslateString(999, 'Get LP tokens')}
             </LinkExternal>
           </Flex>
           <Heading mb="16px">{TranslateString(600, 'During Sale')}:</Heading>
           <List>
-            <li>{TranslateString(602, 'While the sale is live, commit your MANGO-LP tokens to buy the IFO tokens')}</li>
+            <li>{TranslateString(602, 'While the sale is live, commit your LEMON-LP tokens to buy the IFO tokens')}</li>
           </List>
           <Heading mb="16px">{TranslateString(604, 'After Sale')}:</Heading>
           <List>
@@ -72,7 +72,7 @@ const Ifo = () => {
             <Button
               as="a"
               variant="secondary"
-              href="https://docs.mangoswap.finance/core-products/ifo-initial-farm-offering"
+              href="https://docs.lemonswap.finance/core-products/ifo-initial-farm-offering"
             >
               {TranslateString(610, 'Read more')}
             </Button>
@@ -85,7 +85,7 @@ const Ifo = () => {
             <Text mb={3}>
               {TranslateString(
                 514,
-                'Launch your project with PanmangoSwap, Binance Smart Chain’s most-used AMM project and liquidity provider, to bring your token directly to the most active and rapidly growing community on BSC.',
+                'Launch your project with PanlemonSwap, Binance Smart Chain’s most-used AMM project and liquidity provider, to bring your token directly to the most active and rapidly growing community on BSC.',
               )}
             </Text>
             <Button

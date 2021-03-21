@@ -2,8 +2,8 @@ import { useCallback } from 'react'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import { useDispatch } from 'react-redux'
 import { fetchFarmUserDataAsync, updateUserBalance, updateUserPendingReward } from 'state/actions'
-import { mangohHarvest, mangohHarvestBnb, harvest } from 'utils/callHelpers'
-import { useMasterchef, useMangoChef } from './useContract'
+import { lemonhHarvest, lemonhHarvestBnb, harvest } from 'utils/callHelpers'
+import { useMasterchef, useLemonChef } from './useContract'
 
 export const useHarvest = (farmPid: number) => {
   const dispatch = useDispatch()
@@ -34,23 +34,23 @@ export const useAllHarvest = (farmPids: number[]) => {
   return { onReward: handleHarvest }
 }
 
-export const useMangoHarvest = (juiceId, isUsingBnb = false) => {
+export const useLemonHarvest = (juiceId, isUsingBnb = false) => {
   const dispatch = useDispatch()
   const { account } = useWallet()
-  const mangoChefContract = useMangoChef(juiceId)
+  const lemonChefContract = useLemonChef(juiceId)
   const masterChefContract = useMasterchef()
 
   const handleHarvest = useCallback(async () => {
     if (juiceId === 0) {
       await harvest(masterChefContract, 0, account)
     } else if (isUsingBnb) {
-      await mangohHarvestBnb(mangoChefContract, account)
+      await lemonhHarvestBnb(lemonChefContract, account)
     } else {
-      await mangohHarvest(mangoChefContract, account)
+      await lemonhHarvest(lemonChefContract, account)
     }
     dispatch(updateUserPendingReward(juiceId, account))
     dispatch(updateUserBalance(juiceId, account))
-  }, [account, dispatch, isUsingBnb, masterChefContract, mangoChefContract, juiceId])
+  }, [account, dispatch, isUsingBnb, masterChefContract, lemonChefContract, juiceId])
 
   return { onReward: handleHarvest }
 }

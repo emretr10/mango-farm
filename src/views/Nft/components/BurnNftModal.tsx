@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
-import { Button, Checkbox, Modal, Text } from '@mangofarm/uikit'
+import { Button, Checkbox, Modal, Text } from '@lemonfarm/uikit'
 import useI18n from 'hooks/useI18n'
 import { Nft } from 'config/constants/types'
 import { RABBIT_MINTING_FARM_ADDRESS } from 'config/constants/nfts'
@@ -75,12 +75,12 @@ const BurnNftModal: React.FC<BurnNftModalProps> = ({ nft, tokenIds, onSuccess, o
         </InfoRow>
         <InfoRow>
           <Text>{TranslateString(999, 'You will receive')}:</Text>
-          <Value>10 MANGO</Value>
+          <Value>10 LEMON</Value>
         </InfoRow>
       </ModalContent>
       <ModalContent>
         <Text color="failure">
-          {TranslateString(999, 'When you trade in this NFT to receive MANGO, you will lose access to it forever!')}
+          {TranslateString(999, 'When you trade in this NFT to receive LEMON, you will lose access to it forever!')}
         </Text>
         <Text color="failure">{TranslateString(999, 'It will be burned and removed from circulation')}</Text>
       </ModalContent>

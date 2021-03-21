@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Progress } from '@mangofarm/uikit'
+import { Progress } from '@lemonfarm/uikit'
 
 interface IfoCardProgressProps {
   progress: number

@@ -1,12 +1,12 @@
 import React from 'react'
 import BigNumber from 'bignumber.js'
-import { CalculateIcon, IconButton, useModal } from '@mangofarm/uikit'
+import { CalculateIcon, IconButton, useModal } from '@lemonfarm/uikit'
 import { Address } from 'config/constants/types'
 import ApyCalculatorModal from './ApyCalculatorModal'
 
 export interface ApyButtonProps {
   lpLabel?: string
-  mangoPrice?: BigNumber
+  lemonPrice?: BigNumber
   apy?: BigNumber
   quoteTokenAdresses?: Address
   quoteTokenSymbol?: string
@@ -18,7 +18,7 @@ const ApyButton: React.FC<ApyButtonProps> = ({
   quoteTokenAdresses,
   quoteTokenSymbol,
   tokenAddresses,
-  mangoPrice,
+  lemonPrice,
   apy,
 }) => {
   const [onPresentApyModal] = useModal(
@@ -27,7 +27,7 @@ const ApyButton: React.FC<ApyButtonProps> = ({
       quoteTokenAdresses={quoteTokenAdresses}
       quoteTokenSymbol={quoteTokenSymbol}
       tokenAddresses={tokenAddresses}
-      mangoPrice={mangoPrice}
+      lemonPrice={lemonPrice}
       apy={apy}
     />,
   )

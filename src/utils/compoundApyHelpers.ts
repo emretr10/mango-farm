@@ -1,18 +1,18 @@
 const roundToTwoDp = (number) => Math.round(number * 100) / 100
 
-export const calculateMangoEarnedPerThousandDollars = ({ numberOfDays, farmApy, mangoPrice }) => {
+export const calculateLemonEarnedPerThousandDollars = ({ numberOfDays, farmApy, lemonPrice }) => {
   // Everything here is worked out relative to a year, with the asset compounding daily
   const timesCompounded = 365
   //   We use decimal values rather than % in the math for both APY and the number of days being calculates as a proportion of the year
   const apyAsDecimal = farmApy / 100
   const daysAsDecimalOfYear = numberOfDays / timesCompounded
-  //   Calculate the starting MANGO balance with a dollar balance of $1000.
-  const principal = 1000 / mangoPrice
+  //   Calculate the starting LEMON balance with a dollar balance of $1000.
+  const principal = 1000 / lemonPrice
 
   // This is a translation of the typical mathematical compounding APY formula. Details here: https://www.calculatorsoup.com/calculators/financial/compound-interest-calculator.php
   const finalAmount = principal * (1 + apyAsDecimal / timesCompounded) ** (timesCompounded * daysAsDecimalOfYear)
 
-  // To get the mango earned, deduct the amount after compounding (finalAmount) from the starting MANGO balance (principal)
+  // To get the lemon earned, deduct the amount after compounding (finalAmount) from the starting LEMON balance (principal)
   const interestEarned = finalAmount - principal
   return roundToTwoDp(interestEarned)
 }

@@ -7,8 +7,8 @@ import {
   updateUserBalance,
   updateUserPendingReward,
 } from 'state/actions'
-import { unstake, mangoUnstake, mangoEmegencyUnstake } from 'utils/callHelpers'
-import { useMasterchef, useMangoChef } from './useContract'
+import { unstake, lemonUnstake, lemonEmegencyUnstake } from 'utils/callHelpers'
+import { useMasterchef, useLemonChef } from './useContract'
 
 const useUnstake = (pid: number) => {
   const dispatch = useDispatch()
@@ -29,11 +29,11 @@ const useUnstake = (pid: number) => {
 
 const JUICEIDS = []
 
-export const useMangoUnstake = (juiceId) => {
+export const useLemonUnstake = (juiceId) => {
   const dispatch = useDispatch()
   const { account } = useWallet()
   const masterChefContract = useMasterchef()
-  const mangoChefContract = useMangoChef(juiceId)
+  const lemonChefContract = useLemonChef(juiceId)
   const isOldJuice = JUICEIDS.includes(juiceId)
 
   const handleUnstake = useCallback(
@@ -42,17 +42,17 @@ export const useMangoUnstake = (juiceId) => {
         const txHash = await unstake(masterChefContract, 0, amount, account)
         console.info(txHash)
       } else if (isOldJuice) {
-        const txHash = await mangoEmegencyUnstake(mangoChefContract, amount, account)
+        const txHash = await lemonEmegencyUnstake(lemonChefContract, amount, account)
         console.info(txHash)
       } else {
-        const txHash = await mangoUnstake(mangoChefContract, amount, account)
+        const txHash = await lemonUnstake(lemonChefContract, amount, account)
         console.info(txHash)
       }
       dispatch(updateUserStakedBalance(juiceId, account))
       dispatch(updateUserBalance(juiceId, account))
       dispatch(updateUserPendingReward(juiceId, account))
     },
-    [account, dispatch, isOldJuice, masterChefContract, mangoChefContract, juiceId],
+    [account, dispatch, isOldJuice, masterChefContract, lemonChefContract, juiceId],
   )
 
   return { onUnstake: handleUnstake }

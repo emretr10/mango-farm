@@ -1,13 +1,13 @@
 import React, { useCallback, useState } from 'react'
 import styled from 'styled-components'
-import { Button, useModal } from '@mangofarm/uikit'
+import { Button, useModal } from '@lemonfarm/uikit'
 import useI18n from 'hooks/useI18n'
 import useGetLotteryHasDrawn from 'hooks/useGetLotteryHasDrawn'
 import { useLotteryAllowance } from 'hooks/useAllowance'
 import { useLotteryApprove } from 'hooks/useApprove'
 import useTickets from 'hooks/useTickets'
 import useTokenBalance from 'hooks/useTokenBalance'
-import { getMangoAddress } from 'utils/addressHelpers'
+import { getLemonAddress } from 'utils/addressHelpers'
 import BuyTicketModal from './BuyTicketModal'
 import MyTicketsModal from './UserTicketsModal'
 import PurchaseWarningModal from './PurchaseWarningModal'
@@ -28,13 +28,13 @@ const TicketCard: React.FC = () => {
   const allowance = useLotteryAllowance()
   const { onApprove } = useLotteryApprove()
   const lotteryHasDrawn = useGetLotteryHasDrawn()
-  const mangoBalance = useTokenBalance(getMangoAddress())
+  const lemonBalance = useTokenBalance(getLemonAddress())
 
   const tickets = useTickets()
   const ticketsLength = tickets.length
   const [onPresentMyTickets] = useModal(<MyTicketsModal myTicketNumbers={tickets} from="buy" />)
   const [onPresentApprove] = useModal(<PurchaseWarningModal />)
-  const [onPresentBuy] = useModal(<BuyTicketModal max={mangoBalance} tokenName="MANGO" />)
+  const [onPresentBuy] = useModal(<BuyTicketModal max={lemonBalance} tokenName="LEMON" />)
 
   const handleApprove = useCallback(async () => {
     try {
@@ -58,7 +58,7 @@ const TicketCard: React.FC = () => {
             {TranslateString(432, 'View your tickets')}
           </Button>
           <Button fullWidth disabled={requestedApproval} onClick={handleApprove}>
-            {TranslateString(999, 'Approve MANGO')}
+            {TranslateString(999, 'Approve LEMON')}
           </Button>
         </>
       )

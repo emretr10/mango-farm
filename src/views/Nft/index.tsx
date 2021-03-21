@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Heading } from '@mangofarm/uikit'
+import { Heading } from '@lemonfarm/uikit'
 import useI18n from 'hooks/useI18n'
 import Page from 'components/layout/Page'
 import HowItWorks from './components/HowItWorks'
@@ -25,7 +25,7 @@ const Nft = () => {
             NFTs
           </Heading>
           <Heading as="h2" size="lg" color="secondary">
-            {TranslateString(999, 'Trade in for MANGO, or keep for your collection!')}
+            {TranslateString(999, 'Trade in for LEMON, or keep for your collection!')}
           </Heading>
         </StyledHero>
         <NftInfo />

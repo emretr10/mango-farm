@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardBody, Heading, Text } from '@mangofarm/uikit'
+import { Card, CardBody, Heading, Text } from '@lemonfarm/uikit'
 import useI18n from 'hooks/useI18n'
 import CardContent from './CardContent'
 
@@ -11,7 +11,7 @@ const NftInWalletCard = () => {
       <CardBody>
         <CardContent imgSrc="/images/present.svg">
           <Heading mb="8px">{TranslateString(999, 'NFT in wallet')}</Heading>
-          <Text>{TranslateString(999, 'Trade in your NFT for MANGO, or just keep it for your collection.')}</Text>
+          <Text>{TranslateString(999, 'Trade in your NFT for LEMON, or just keep it for your collection.')}</Text>
         </CardContent>
       </CardBody>
     </Card>

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
-import { Image, Card, CardBody } from '@mangofarm/uikit'
+import { Image, Card, CardBody } from '@lemonfarm/uikit'
 import { useWinningNumbers, useMatchingRewardLength } from 'hooks/useTickets'
 import useI18n from 'hooks/useI18n'
 import useGetLotteryHasDrawn from 'hooks/useGetLotteryHasDrawn'
@@ -100,7 +100,7 @@ const WinningNumbers: React.FC = () => {
                 </CenteredTextWithPadding>
               </RowNoPadding>
             </Column>
-            <Link href="https://api.mangoswap.com/api/lottery?page=0&pageSize=25" target="_blank">
+            <Link href="https://api.lemonswap.com/api/lottery?page=0&pageSize=25" target="_blank">
               {TranslateString(448, 'Export recent winning numbers')}
             </Link>
           </StyledCardContentInner>

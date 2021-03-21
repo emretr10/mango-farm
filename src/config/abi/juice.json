@@ -2,8 +2,8 @@
   {
     "inputs": [
       {
-        "internalType": "contract MangoToken",
-        "name": "_mango",
+        "internalType": "contract LemonToken",
+        "name": "_lemon",
         "type": "address"
       }
     ],
@@ -242,10 +242,10 @@
   },
   {
     "inputs": [],
-    "name": "mango",
+    "name": "lemon",
     "outputs": [
       {
-        "internalType": "contract MangoToken",
+        "internalType": "contract LemonToken",
         "name": "",
         "type": "address"
       }
@@ -590,7 +590,7 @@
         "type": "uint256"
       }
     ],
-    "name": "safeMangoTransfer",
+    "name": "safeLemonTransfer",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

@@ -22,7 +22,7 @@ export type DataResponse = {
  */
 const getLotteryRoundData = async (lotteryNumber: number): Promise<DataResponse> => {
   try {
-    const response = await fetch(`https://api.mangoswap.com/api/singleLottery?lotteryNumber=${lotteryNumber}`)
+    const response = await fetch(`https://api.lemonswap.com/api/singleLottery?lotteryNumber=${lotteryNumber}`)
     const data = await response.json()
 
     return data

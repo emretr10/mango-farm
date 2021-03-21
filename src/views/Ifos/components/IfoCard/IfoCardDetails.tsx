@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import BigNumber from 'bignumber.js'
-import { Text, LinkExternal, Link } from '@mangofarm/uikit'
+import { Text, LinkExternal, Link } from '@lemonfarm/uikit'
 import useI18n from 'hooks/useI18n'
 
 export interface IfoCardDetailsProps {
@@ -9,7 +9,7 @@ export interface IfoCardDetailsProps {
   launchTime: string
   saleAmount: string
   raiseAmount: string
-  mangoToBurn: string
+  lemonToBurn: string
   projectSiteUrl: string
   raisingAmount: BigNumber
   totalAmount: BigNumber
@@ -34,7 +34,7 @@ const IfoCardDetails: React.FC<IfoCardDetailsProps> = ({
   launchTime,
   saleAmount,
   raiseAmount,
-  mangoToBurn,
+  lemonToBurn,
   projectSiteUrl,
   raisingAmount,
   totalAmount,
@@ -68,8 +68,8 @@ const IfoCardDetails: React.FC<IfoCardDetailsProps> = ({
           <Text>{raiseAmount}</Text>
         </Item>
         <Item>
-          <Display>{TranslateString(586, 'MANGO to burn (USD)')}</Display>
-          <Text>{mangoToBurn}</Text>
+          <Display>{TranslateString(586, 'LEMON to burn (USD)')}</Display>
+          <Text>{lemonToBurn}</Text>
         </Item>
         <Item>
           <Display>{TranslateString(999, 'Total raised (% of target)')}</Display>

@@ -73,12 +73,12 @@ export const usePriceBnbBusd = (): BigNumber => {
   return farm.tokenPriceVsQuote ? new BigNumber(farm.tokenPriceVsQuote) : ZERO
 }
 
-export const usePriceMangoBusd = (): BigNumber => {
-  const pid = 1 // MANGO-BNB LP
+export const usePriceLemonBusd = (): BigNumber => {
+  const pid = 1 // LEMON-BNB LP
    const bnbPriceUSD = usePriceBnbBusd()
   const farm = useFarmFromPid(pid)
   return farm.tokenPriceVsQuote ? bnbPriceUSD.times(farm.tokenPriceVsQuote) : ZERO
-//  const pid = 0 // MANGO-BUSD LP
+//  const pid = 0 // LEMON-BUSD LP
 //  const farm = useFarmFromPid(pid)
 //  return farm.tokenPriceVsQuote ? new BigNumber(farm.tokenPriceVsQuote) : ZERO
 }
@@ -86,7 +86,7 @@ export const usePriceMangoBusd = (): BigNumber => {
 export const useTotalValue = (): BigNumber => {
   const farms = useFarms()
   const bnbPrice = usePriceBnbBusd()
-  const mangoPrice = usePriceMangoBusd()
+  const lemonPrice = usePriceLemonBusd()
   let value = new BigNumber(0)
   for (let i = 0; i < farms.length; i++) {
     const farm = farms[i]
@@ -94,8 +94,8 @@ export const useTotalValue = (): BigNumber => {
       let val
       if (farm.quoteTokenSymbol === QuoteToken.BNB) {
         val = bnbPrice.times(farm.lpTotalInQuoteToken)
-      } else if (farm.quoteTokenSymbol === QuoteToken.MANGO) {
-        val = mangoPrice.times(farm.lpTotalInQuoteToken)
+      } else if (farm.quoteTokenSymbol === QuoteToken.LEMON) {
+        val = lemonPrice.times(farm.lpTotalInQuoteToken)
       } else {
         val = farm.lpTotalInQuoteToken
       }

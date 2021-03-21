@@ -11,7 +11,7 @@ export interface Ifo {
   launchTime: string
   saleAmount: string
   raiseAmount: string
-  mangoToBurn: string
+  lemonToBurn: string
   projectSiteUrl: string
   currency: string
   currencyAddress: string
@@ -21,7 +21,7 @@ export interface Ifo {
 
   export enum QuoteToken {
   'BNB' = 'BNB',
-  'MANGO' = 'MANGO',
+  'LEMON' = 'LEMON',
   'PIZZA' = 'PIZZA',
   'CHS' = 'CHS',
   'USDT' = 'USDT',

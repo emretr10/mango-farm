@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Heading, Text, BaseLayout } from '@mangofarm/uikit'
+import { Heading, Text, BaseLayout } from '@lemonfarm/uikit'
 import useI18n from 'hooks/useI18n'
 import Page from 'components/layout/Page'
 import FarmStakingCard from './components/FarmStakingCard'
 import LotteryCard from './components/LotteryCard'
-import MangoStats from './components/MangoStats'
+import LemonStats from './components/LemonStats'
 import TotalValueLockedCard from './components/TotalValueLockedCard'
 import TwitterCard from './components/TwitterCard'
 
@@ -23,7 +23,7 @@ const Hero = styled.div`
   text-align: center;
 
   ${({ theme }) => theme.mediaQueries.lg} {
-    background-image: url('/images/mangos-bg.svg'), url('/images/tree-bg.svg');
+    background-image: url('/images/lemons-bg.svg'), url('/images/tree-bg.svg');
     background-position: left center, right center;
     height: 165px;
     padding-top: 0;
@@ -60,7 +60,7 @@ const Home: React.FC = () => {
     <Page>
       <Hero>
         <Heading as="h1" size="xl" mb="24px" color="secondary">
-          {TranslateString(576, 'Mango Farm Finance')}
+          {TranslateString(576, 'Lemon Farm Finance')}
         </Heading>
         <Text>{TranslateString(578, 'The Best Yield Farm DApp on Binance Smart Chain.')}</Text>
       </Hero>
@@ -68,7 +68,7 @@ const Home: React.FC = () => {
         <Cards>
           <FarmStakingCard />
           <TwitterCard />
-          <MangoStats />
+          <LemonStats />
           <TotalValueLockedCard />
         </Cards>
       </div>

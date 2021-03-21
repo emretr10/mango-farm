@@ -1,1 +1,1 @@
-export { default } from './Mango'
+export { default } from './Lemon'
